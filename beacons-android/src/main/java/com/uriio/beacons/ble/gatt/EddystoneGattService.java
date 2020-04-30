@@ -7,7 +7,7 @@ import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattServer;
 import android.bluetooth.BluetoothGattService;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import com.uriio.beacons.Util;
 import com.uriio.beacons.ble.EddystoneAdvertiser;
@@ -279,10 +279,13 @@ public class EddystoneGattService {
             characteristic.setValue(new byte[]{value[0]});
         } else if (characteristic == mActiveSlotCharacteristic) {
             log("Request to change active slot to " + value[0]);
-            if (value[0] != 1) {
-                // Beacon Tools tries to change the active slot to 1
-                return BluetoothGatt.GATT_INVALID_ATTRIBUTE_LENGTH;
-            }
+            //Dima: commented because Beacon Tools app sends first value 0 and then 1.
+            // If it returns BluetoothGatt.GATT_INVALID_ATTRIBUTE_LENGTH Beacon Tools
+            // app infinitive connecting to this virtual beacon.
+//            if (value[0] != 1) {
+//                // Beacon Tools tries to change the active slot to 1
+//                return BluetoothGatt.GATT_INVALID_ATTRIBUTE_LENGTH;
+//            }
         } else if (characteristic == mRadioTxPowerCharacteristic) {
             if (value.length == 1) {
                 int txPower = mConfigCallback.setRadioTxPower(value[0]);

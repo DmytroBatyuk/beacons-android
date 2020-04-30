@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.uriio.beacons.model.Beacon;
@@ -202,6 +202,8 @@ public class Beacons {
     }
 
     static void onBleServiceDestroyed() {
+        if (null == _instance) return;
+
         if (null != _instance.mActiveItems) {
             _instance.mActiveItems.clear();
         }

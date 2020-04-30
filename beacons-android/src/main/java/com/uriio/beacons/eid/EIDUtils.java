@@ -1,7 +1,7 @@
 package com.uriio.beacons.eid;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.uriio.beacons.Util;
 

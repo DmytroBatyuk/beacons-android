@@ -8,8 +8,8 @@ import android.bluetooth.le.BluetoothLeAdvertiser;
 import android.os.Build;
 import android.os.ParcelUuid;
 import android.os.SystemClock;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.uriio.beacons.BuildConfig;
