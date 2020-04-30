@@ -19,21 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        //TODO: do we need request permissions?
+
         Beacons.initialize(applicationContext)
-
-//        EddystoneUID(
-//                "11223344-5566-7788-9999-886655441100".toByteArray(),
-//                AdvertiseSettings.ADVERTISE_MODE_BALANCED,
-//                AdvertiseSettings.ADVERTISE_TX_POWER_LOW
-//        ).start()
-//
-//        EddystoneTLM(6000).start()
-//
-//        EddystoneURL("https://github.com/123").start()
-
-//        EIDUtils.register(LocalEIDResolver(), )
-//        EddystoneEID()
-
 
         gattServer = EddystoneGattServer(EddystoneGattServer.Listener { configuredBeacon ->
             Log.e("DIMA", "onConfigureBeacon: is null: ${null==configuredBeacon}")
