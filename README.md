@@ -1,4 +1,4 @@
-## Android BLE beacon advertising library
+## [OUTDATED] Android BLE beacon advertising library
 
 Broadcast Bluetooth Low Energy beacons directly from Android 5.0 or later, on [devices that support BLE peripheral mode](#known-supported-devices).
 This library powers the [**Beacon Toy**](https://play.google.com/store/apps/details?id=com.uriio) app and the [UriIO client library](https://github.com/uriio/uriio-android) for ephemeral URL beacons.
