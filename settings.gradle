@@ -1,1 +1,2 @@
 include ':beacons-android'
+include ':app'
